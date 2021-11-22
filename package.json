@@ -1,0 +1,23 @@
+{
+  "name": "foxvalleydemo2",
+  "version": "1.0.0",
+  "description": "The second iteration of the FoxValley PDRMA Forms, Minor Injury Forms, Vehicle Accident Forms, Property Damage Forms etc...",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "bjlz-fox-valley",
+  "license": "ISC",
+  "devDependencies": {
+    "sequelize-cli": "^6.3.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.3.3",
+    "node": "^17.1.0",
+    "sequelize": "^6.12.0-alpha.1"
+  }
+}

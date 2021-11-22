@@ -1,0 +1,2 @@
+# Instructions For Views
+You will need to submit at least one view for each of the forms you were assigned. You may have more than one view for each of your forms if you wish, but you must at least have one view that can be passed a javascript object and rendered with that object's data.
