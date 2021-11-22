@@ -1,0 +1,3 @@
+# Instructions For Routes File
+
+Finish implementing the code for the routes described in the routes file template I included for each of the forms. You may already have routes that accomplish each of the tasks laid out in the routes file comments. If that is the case I would still like the code to be refactored with the url patterns shown in the routes file. After that I would like to move towards starting to use an ORM tool to interact with the database. I think Sequelize looks interesting. They give a a command line interface (CLI) that provides some scaffolding features.
