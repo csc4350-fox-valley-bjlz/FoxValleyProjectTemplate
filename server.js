@@ -82,7 +82,13 @@ app.use('/Form04E', Form04ERouter);
 
 
 // Set application listening port
-app.listen(process.env.SERVER_PORT || 5000);
+app.listen(process.env.SERVER_PORT || 5005);
 
 // Console Log Listening Port
-console.log(`Listening on port:${process.env.SERVER_PORT || 5000}`);
+console.log(`Listening on port:${process.env.SERVER_PORT || 5005}`);
+
+//let db_connection = db.getConnection();
+
+//results = db_connection.query('SELECT * FROM form_04_forms');
+
+//console.log(results);

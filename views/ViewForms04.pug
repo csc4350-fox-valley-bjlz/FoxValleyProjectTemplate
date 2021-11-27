@@ -2,10 +2,10 @@ doctype html
 head
     meta(charset='UTF-8')
     title View Forms 04
-    link(rel='stylesheet' href='css/bootstrap/dist/css/bootstrap.min.css')
-    link(rel='stylesheet' href='css/ViewFormsGeneral.css')
-    script(src='js/jquery/dist/jquery.js')
-    script(src='css/bootstrap/dist/js/bootstrap.bundle.js')
+    link(rel='stylesheet' href='/css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/css/ViewFormsGeneral.css')
+    script(src='/js/jquery/dist/jquery.js')
+    script(src='/css/bootstrap/dist/js/bootstrap.bundle.js')
 
 form(action='ViewFormsSelection' method='get').d-flex.justify-content-center
     button.btn.btn-lg.btn-primary.action-button(type='submit' ) Go Back to View Forms
@@ -27,7 +27,7 @@ table( style="width:100%;", border="1" )
     each row in data
         tr
             td
-                form(action='updateForm04' method='post').d-flex.justify-content-center
+                form(action=`UpdateForm/${row.Form04ID}` method='post').d-flex.justify-content-center
                     button.btn.btn-lg.btn-primary.action-button(type='submit' name='form04id' value=`${row.Form04ID}` class='formButton' id=`${row.Form04ID}` ) update form
                 form(action='deleteForm04' method='post').d-flex.justify-content-center
                     button.btn.btn-lg.btn-primary.action-button(type='submit' name='form04idDelete' value=`${row.Form04ID}` class='formButton' id=`${row.Form04ID}Delete` ) Delete form

@@ -6,7 +6,11 @@ const router = express.Router();
 
 // Get the home route
 router.get('/', (req, res) => {
-    res.render('Home');
+    res.render('index');
+});
+
+router.get('/Home', (req, res) => {
+    res.render("Home");
 });
 
 // Get the newFormSelection route

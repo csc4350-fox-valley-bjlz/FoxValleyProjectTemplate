@@ -1,4 +1,5 @@
 const { Sequelize } = require('sequelize');
+const mysql = require('mysql');
 const dotenv = require('dotenv');
 
 // Setup Environment Variables From .env File
@@ -18,6 +19,17 @@ class db {
 
     getConnectionURI(){
         return `${this.db_instance_type}://${this.db_host}:${this.db_port}/${this.db_database}`
+    }
+
+    getConnection(){
+        const con = mysql.createConnection({
+            host: this.db_host,
+            user: this.db_user,
+            password: this.db_password,
+            database: this.db_database
+        });
+        
+        return con;
     }
 
     getSequelize(){

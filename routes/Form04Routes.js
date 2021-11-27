@@ -4,19 +4,43 @@ const express = require('express');
 // Get router from express
 const router = express.Router();
 
+// Require db file
+const db = require('../db.js');
+
+// Get Sequelize query types
+const { QueryTypes } = require('sequelize');
+const { stringify } = require('querystring');
+
+// Get sql connection
+const con = db.getConnection();
+
 // Return Rendered Submit Form04 Form
 router.get('/NewSubmission', (req, res) => {
     res.render('PDRMA_Form_04_Employee_Injury_Report');
 });
 
 // Return Rendered Form04 Form with specific id
-router.get('/:id', (req, res) => {
-
+router.post('/UpdateForm/:id', (req, res) => {
+    let id = req.params.id;
+    let sql = `SELECT * FROM form_04_forms WHERE Form04ID = ${id}`;
+    con.query(sql, (err, results, fields) => {
+        res.render('form_04_update', {
+            title: 'test',
+            data: results
+        });
+        console.log(results);
+    });
 });
 
 // Return Rendered Table of Form04 Forms
 router.get('/TableView', (req, res) => {
-
+    let sql = 'SELECT * FROM form_04_forms';
+    con.query(sql, (err, results, fields) => {
+        res.render('ViewForms04', {
+            title: 'title',
+            data: results
+        });
+    });
 });
 
 // Return Array of JSON objects of Form04 Forms
@@ -43,5 +67,13 @@ router.put('/:id', (req, res) => {
 router.delete('/:id', (req, res) => {
 
 });
+
+// router.use(function (err, req, res, next) {
+//     if (err) {
+//       console.log('Error', err);
+//     } else {
+//       console.log('404')
+//     }
+//   });
 
 module.exports = router;
