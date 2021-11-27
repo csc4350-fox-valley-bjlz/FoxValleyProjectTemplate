@@ -14,4 +14,9 @@ router.get('/newFormSelection', (req, res) => {
     res.render('NewFormSelection');
 });
 
+// Get the ViewFormsSelection route
+router.get('ViewFormsSelection', (req, res) => {
+    res.render('ViewFormsSelection');
+});
+
 module.exports = router;
