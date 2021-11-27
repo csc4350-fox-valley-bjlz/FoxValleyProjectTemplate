@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Return Rendered Submit Form02 Form
 router.get('/NewSubmission', (req, res) => {
-    res.render();
+    res.render('PDRMA_Form_02_Vehicle_Accident_Report');
 });
 
 // Return Rendered Form02 Form with specific id

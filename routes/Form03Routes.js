@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Return Rendered Submit Minor Injury Log Form
 router.get('/NewSubmission', (req, res) => {
-    res.render();
+    res.render('PDRMA_Form_03_Property_Loss_Report');
 });
 
 // Return Rendered Minor Injury Log Form with specific id

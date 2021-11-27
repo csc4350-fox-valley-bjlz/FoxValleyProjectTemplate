@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Return Rendered Submit Form04E Form
 router.get('/NewSubmission', (req, res) => {
-    res.render();
+    res.render('PDRMA_Form_04E_Employee_Injury_Report');
 });
 
 // Return Rendered Form04E Form with specific id
