@@ -6,7 +6,7 @@ const router = express.Router();
 
 // Return Rendered Submit Form01
 router.get('/NewSubmission', (req, res) => {
-    res.render();
+    res.render('');
 });
 
 // Return Rendered Form01 with specific id
