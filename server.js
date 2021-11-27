@@ -45,19 +45,19 @@ const RootRoutesRouter = require('./routes/RootRoutes');
 const MinorInjuryLogRouter = require('./routes/MinorInjuryLogRoutes.js');
 
 // TODO: Pull in route file for PDRMA_Form_01
-// const Form01Router = require('./routes/Form01Routes.js');
+const Form01Router = require('./routes/Form01Routes.js');
 
 // TODO: Pull in route file for PDRMA_Form_02
-// const Form02Router = require('./routes/Form02Routes.js');
+const Form02Router = require('./routes/Form02Routes.js');
 
 // TODO: Pull in route file for PDRMA_Form_03
-// const Form03Router = require('./routes/Form03Routes.js');
+const Form03Router = require('./routes/Form03Routes.js');
 
 // TODO: Pull in route file for PDRMA_Form_04
-// const Form04Router = require('./routes/Form04Routes.js');
+const Form04Router = require('./routes/Form04Routes.js');
 
 // TODO: Pull in route file for PDRMA_Form_04E
-// const Form04ERouter = require('./routes/Form04ERoutes.js');
+const Form04ERouter = require('./routes/Form04ERoutes.js');
 
 // Add RootRoutes Router to app middleware
 app.use('/', RootRoutesRouter);
@@ -66,19 +66,19 @@ app.use('/', RootRoutesRouter);
 app.use('/MinorInjuryLog', MinorInjuryLogRouter);
 
 // TODO: Add PDRMA_Form_01 route file to app middleware
-// app.use('/Form01', Form01Router);
+app.use('/Form01', Form01Router);
 
 // TODO: Add PDRMA_Form_02 route file to app middleware
-// app.use('/Form02', Form02Router);
+app.use('/Form02', Form02Router);
 
 // TODO: Add PDRMA_Form_03 route file to app middleware
-// app.use('/Form03', Form03Router);
+app.use('/Form03', Form03Router);
 
 // TODO: Add PDRMA_Form_04 route file to app middleware
-// app.use('/Form04', Form04Router);
+app.use('/Form04', Form04Router);
 
 // TODO: Add PDRMA_Form_04E route file to app middleware
-// app.use('/Form04E', Form04ERouter);
+app.use('/Form04E', Form04ERouter);
 
 
 // Set application listening port
