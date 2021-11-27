@@ -37,6 +37,9 @@ app.use(body_parser.urlencoded({
 
 // TODO-Eventually: add auth middleware
 
+// Pull in root routes
+const RootRoutesRouter = require('./routes/RootRoutes');
+
 
 // TODO: Pull in route file for MinorInjuryLog
 const MinorInjuryLogRouter = require('./routes/MinorInjuryLogRoutes.js');
@@ -55,6 +58,9 @@ const MinorInjuryLogRouter = require('./routes/MinorInjuryLogRoutes.js');
 
 // TODO: Pull in route file for PDRMA_Form_04E
 // const Form04ERouter = require('./routes/Form04ERoutes.js');
+
+// Add RootRoutes Router to app middleware
+app.use('/', RootRoutesRouter);
 
 // TODO: Add MinorInjuryLog route file to app middleware
 app.use('/MinorInjuryLog', MinorInjuryLogRouter);
