@@ -1,0 +1,67 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title View Forms 03
+    link(rel='stylesheet' href='/css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/css/ViewFormsGeneral.css')
+    script(src='/js/jquery/dist/jquery.js')
+    script(src='/css/bootstrap/dist/js/bootstrap.bundle.js')
+
+form(action='ViewFormsSelection' method='get').d-flex.justify-content-center
+    button.btn.btn-lg.btn-primary.action-button(type='submit' ) Go Back to View Forms
+
+table( style="width:100%;", border="1" )
+    //thead.thead-light
+    //    tr
+    //        th(scope='col') Program
+    //        th(scope='col') First
+    //        th(scope='col') Last
+    //        th(scope='col') Form
+    -var keys = Object.keys(data[0])
+    -console.log(data)
+    -console.log(keys)
+        tr
+            th viewFormButton
+            each met in keys
+                th=met
+    each row in data
+        tr
+            td
+                form(action=`UpdateForm/${row.Form03ID}` method='post').d-flex.justify-content-center
+                    button.btn.btn-lg.btn-primary.action-button(type='submit' name='form03id' value=`${row.Form03ID}` class='formButton' id=`${row.Form03ID}` ) update form
+                form(action='deleteForm03' method='post').d-flex.justify-content-center
+                    button.btn.btn-lg.btn-primary.action-button(type='submit' name='form03idDelete' value=`${row.Form03ID}` class='formButton' id=`${row.Form03ID}Delete` ) Delete form
+            td=row.Form03ID
+            td=row.Agency_Name
+            td=row.Todays_Date
+            td=row.Date_of_Incident
+            td=row.Time_of_Incident
+            td=row.Form_Completer_Name
+            td=row.Form_Completer_Title
+            td=row.Form_Completer_Phone
+            td=row.Form_Completer_Email
+            td=row.How_Incident_Occurred_Short
+            td=row.Incident_Location_Name
+            td=row.Incident_Location_Address
+            td=row.Incedent_Location_City
+            td=row.Incident_Location_State
+            td=row.Incident_Location_Zip
+            td=row.Incident_Location_Specific
+            td=row.Incident_Primary_Location
+            td=row.Estimate_of_Loss
+            td=row.Contact_Person_at_Facility
+            td=row.Contact_Persons_Email
+            td=row.Contact_Persons_Phone
+            td=row.Damage_by_ThirdParty
+            td=row.Name_Person_Identified
+            td=row.Address_Person_Identified
+            td=row.City_Person_Identified
+            td=row.State_Person_Identified
+            td=row.Zip_Person_Identified
+            td=row.Police_Investigation_conducted
+            td=row.Police_Agency_Investigated_Name
+            td=row.Police_Report_Num
+            td=row.Charges_Against_Party
+
+
+

@@ -1,0 +1,177 @@
+doctype html
+head
+    meta(charset='UTF-8')
+    title Employee Injury Report
+    link(rel='stylesheet' href='/css/bootstrap/dist/css/bootstrap.min.css')
+    link(rel='stylesheet' href='/css/PDRMA_Form_03_Property_Loss_Report.css')
+    script(src='js/form_03_read_to_object.js')
+    //onsubmit='return formSubmission();'
+form#pdrma-form-03(action='finalUpdateForm03' method='post')
+    .container.pdrma-form-03-title
+        h1#pdrma-form-03-title PDRMA Form O3
+    br
+    br
+    .form-group
+        .row
+            .col
+                p Delete all info in date fields after the yyyy-mm-dd BEFORE submitting
+    .form-group
+        .row
+            .col
+                label(for='Form03ID') form id
+                input#Form03ID.form-control(type='text' style='line-clamp:10' name='Form03ID' value=data.Form03ID)
+    .form-group
+        .row
+            .col
+                label(for='agency-name') Agency Name
+                input#agency-name.form-control(type='text' name='Agency_Name' value='Fox Valley Special' placeholder='Fox Valley Special Recreation Association')
+            .col
+                label(for='todays-date') Today&apos;s date
+                input#todays-date.form-control(type='text' maxlength=10 name='Todays_Date' value=data[0].Todays_Date placeholder='yyyy-mm-dd')
+    .form-group
+        .row
+            .col
+                label(for='date-of-incident') Date of Incident
+                input#date-of-incident.form-control(type='text' maxlength=10 name='Date_of_Incident' value=data[0].Date_of_Incident placeholder='yyyy-mm-dd')
+            .col
+                label(for='time-of-incident') Time of Incident
+                input#time-of-incident.form-control(type='text' name='Time_of_Incident' value=data[0].Time_of_Incident placeholder='00:00 - 24:60')
+    .form-group
+        .row
+            .col
+                label(for='name-of-person-completing-report') Name of person completing report
+                input#name-of-person-completing-report.form-control(type='text' value=data[0].Form_Completer_Name name='Form_Completer_Name')
+            .col
+                label(for='title-of-person-completing-report') Title of person completing report
+                input#title-of-person-completing-report.form-control(type='text' value=data[0].Form_Completer_Title name='Form_Completer_Title')
+    .form-group
+        .row
+            .col
+                label(for='business-phone-number') Business Phone Number
+                input#business-phone-number.form-control(type='text' name='Form_Completer_Phone' value=data[0].Form_Completer_Phone placeholder='630.907.1114')
+            .col
+                label(for='business-email') Business Email
+                input#business-email.form-control(type='text' name='Form_Completer_Email' value=data[0].Form_Completer_Email placeholder='jasonp@fvsra.org')
+    .form-group
+        label(for='how-did-incident-occur') How did the incident occur and what property was damaged?
+        textarea#how-did-incident-occur.form-control(name='How_Occur_What_Damaged_Brief' value=data[0].How_Occur_What_Damaged_Brief cols='30' rows='10' placeholder='Provide a brief, factual description.')
+    .form-group
+        label(for='name-of-location') Name of the location or nearest intersection where the incident occurred.
+        input#name-of-location.form-control(type='text' value=data[0].Incident_Location_Name name='Incident_Location_Name')
+    .form-group
+        .row
+            //.col
+            //    p Is there an address for this location? If yes, please provide the following:
+            //.col
+            //    .form-check.form-check-inline
+            //        label.form-check-label(for='address-available-yes') Yes
+            //        input#address-available-yes.form-check-input(type='radio' name='address-available-radio')
+            //    .form-check.form-check-inline
+            //        label.form-check-label(for='address-available-no') No
+            //        input#address-available-no.form-check-input(type='radio' name='address-available-radio')
+            //    .form-check.form-check-inline
+            //        label.form-check-label(for='address-available-unknown') Unknown
+            //        input#address-available-unknown.form-check-input(type='radio' name='address-available-radio')
+            .row
+                .col
+                    label(for='incident-address') Address:
+                    input#incident-address.form-control(type='text' value=data[0].Incident_Location_Address name='Incident_Location_Address')
+            .row
+                .col
+                    label(for='incident-city') city:
+                    input#incident-city.form-control(type='text' value=data[0].Incident_Location_City name='Incident_Location_City')
+                .col
+                    label(for='incident-state') state:
+                    input#incident-state.form-control(type='text' value=data[0].Incident_Location_State name='Incident_Location_State')
+                .col
+                    label(for='incident-zip') zip code:
+                    input#incident-zip.form-control(type='text' value=data[0].Incident_Location_Zip name='Incident_Location_Zip')
+        .form-group
+            label(for='specific-location') Location (Specify the exact type of location/facility damaged, listing multiple locations/facilities if necessary.)
+            input#specific-location.form-control(type='text' value=data[0].Incident_Location_Specific name='Incident_Location_Specific' placeholder='Ex. maintenance garage, sports field, etc')
+        .form-group
+            label(for='primary-location')
+                | Primary location (Identify the exact area of damage. Ex. ool storage, batting cage)
+            input#primary-location.form-control(type='text' value=data[0].Incident_Primary_Location name='Incident_Primary_Location')
+        .form-group
+            label(for='estimate-of-loss') Estimate of loss
+            input#estimate-of-loss.form-control(type='text' value=data[0].Estimate_of_Loss name='Estimate_of_Loss')
+        .form-group
+            label(for='Contact-person-at-facility') Contact person at facility
+            input#Contact-person-at-facility.form-control(type='text' value=data[0].Contact_Person_at_Facility name='Contact_Person_at_Facility')
+        .form-group
+            label(for='contact-person-email) Contact person&apos;s email
+            input#contact-person-email.form-control(type='text' value=data[0].Contact_Persons_Email name='Contact_Persons_Email')
+        .form-group
+            label(for='Contact-person-phone-number') Contact person&apos;s phone number
+            input#Contact-person-phone-number.form-control(type='text' value=data[0].Contact_Persons_Phone name='Contact_Persons_Phone')
+        .form-group
+            .row
+                .col
+                    p Was damage caused by third-party (non-agency) individual?
+                .form-check.form-check-inline.col
+                    label(for='damage-caused-by-third-party-y') yes
+                    input#damage-caused-by-third-party-y.form-check-input(type='radio' value=1 name='Damage_by_ThirdParty' checked=data[0].Damage_by_ThirdParty == 1)
+                .form-check.form-check-inline.col
+                    label(for='damage-caused-by-third-party-n') no
+                    input#damage-caused-by-third-party-n.form-check-input(type='radio' value=0 name='Damage_by_ThirdParty' checked=data[0].Damage_by_ThirdParty == 0)
+                .form-check.form-check-inline.col
+                    label(for='damage-caused-by-third-party-m') unknown
+                    input#damage-caused-by-third-party-m.form-check-input(type='radio' value=0 name='Damage_by_ThirdParty')
+        .form-group
+            .row
+                .col
+                    p | Was the party responsible for damage been identified? If yes, provide the following contact information for the person or persons identified:
+                .col
+                    .form-check.form-check-inline
+                        label.form-check-label(for='party-damage-identified-yes') Yes
+                        input#party-damage-identified-yes.form-check-input(type='radio' name='party-damage-identified-radio')
+                    .form-check.form-check-inline
+                        label.form-check-label(for='party-damage-identified-no') No
+                        input#party-damage-identified-no.form-check-input(type='radio' name='party-damage-identified-radio')
+                    .form-check.form-check-inline
+                        label.form-check-label(for='party-damage-identified-unknown') Unknown
+                        input#party-damage-identified-unknown.form-check-input(type='radio' name='party-damage-identified-radio')
+                .row
+                    .col
+                        label(for='identified-name') Name:
+                        input#identified-name.form-control(type='text' value=data[0].Name_Person_Identified name='Name_Person_Identified')
+                .row
+                    .col
+                        label(for='identified-address') Address:
+                        input#identified-address.form-control(type='text' value=data[0].Address_Person_Identified name='Address_Person_Identified')
+                .row
+                    .col
+                        label(for='identified-city') city:
+                        input#identified-city.form-control(type='text' value=data[0].City_Person_Identified name='City_Person_Identified')
+                    .col
+                        label(for='identified-state') state:
+                        input#identified-state.form-control(type='text' value=data[0].State_Person_Identified name='State_Person_Identified')
+                    .col
+                        label(for='identified-zip') zip code:
+                        input#identified-zip.form-control(type='text' value=data[0].Zip_Person_Identified name='Zip_Person_Identified')
+        .form-group
+            .row
+                .col
+                    p Has a police agency conducted an investigation?
+                .form-check.form-check-inline.col
+                    label(for='police-conduct-investigation-y') yes
+                    input#police-conduct-investigation-y.form-check-input(type='radio' value=1 name='Police_Investigation_conducted' checked=data[0].Police_Investigation_conducted == 1)
+                .form-check.form-check-inline.col
+                    label(for='police-conduct-investigation-n') no
+                    input#police-conduct-investigation-n.form-check-input(type='radio' value=0 name='Police_Investigation_conducted' checked=data[0].Police_Investigation_conducted == 0)
+                .form-check.form-check-inline.col
+                    label(for='police-conduct-investigation-m') unknown
+                    input#police-conduct-investigation-m.form-check-input(type='radio' value=0 name='Police_Investigation_conducted')
+        .form-group
+            label(for='what-police-investigated') What police agency investigated the incident?
+            input#what-police-investigated.form-control(type='text' value=data[0].Police_Agency_Investigated_Name name='Police_Agency_Investigated_Name')
+        .form-group
+            label(for='police-report-num') What is the police report number?
+            input#police-report-num.form-control(type='text' value=data[0].Police_Report_Num name='Police_Report_Num')
+        .form-group
+            label(for='charges-against-party') Were criminal charges brought against the responsible party? If yes, what were the charges?
+            input#charges-against-party.form-control(type='text' value=data[0].Charges_Against_Party name='Charges_Against_Party')
+    .form-group.clear-submit-buttons
+        button.btn.btn-secondary.button-spaced(type='button') Clear
+        button.btn.btn-primary.button-spaced(type='submit') Submit
