@@ -1,6 +1,6 @@
 CREATE TABLE `form_03` (
   `Agency_name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
-  `Today's_Date` date NOT NULL,
+  `Todays_Date` date NOT NULL,
   `Date_of_Incident` date NOT NULL,
   `Time_of_Incident` time NOT NULL,
   `Form_Completer_Name` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
@@ -28,6 +28,27 @@ CREATE TABLE `form_03` (
   `Police_Investigation_conducted` tinyint(1) DEFAULT NULL,
   `Police_Agency_Investigated_Name` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `Police_Report_Num` int NOT NULL,
-  `Charges_Against_Party` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL
+  `Charges_Against_Party` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
+  `Form03ID` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `form_03`
+--
+ALTER TABLE `form_03`
+  ADD PRIMARY KEY (`Form03ID`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `form_03`
+--
+ALTER TABLE `form_03`
+  MODIFY `Form03ID` int NOT NULL AUTO_INCREMENT;
 COMMIT;
