@@ -86,7 +86,7 @@ function formSubmission() {
     if (incidentAmPm === 'p.m.'){
         incidentHhMm[0] = parseInt(incidentHhMm[0]) + 12
     }
-    form_04.Time_of_Incident = `${incidentHhMm[0]}:${incidentHhMm[1]}`;
+    form_03.Time_of_Incident = `${incidentHhMm[0]}:${incidentHhMm[1]}`;
 
 
    // console.log(form_03)
