@@ -8,13 +8,18 @@ const router = express.Router();
 const db = require('../db.js');
 
 // Get Sequelize query types
-const { QueryTypes } = require('sequelize');
-const { stringify } = require('querystring');
+const {QueryTypes} = require('sequelize');
+const {stringify} = require('querystring');
 
 // Get sql connection
 const con = db.getConnection();
 
-// Return Rendered Submit Minor Injury Log Form
+// Return Rendered Submit Form04 Form
+router.get('/NewSubmission', (req, res) => {
+    res.render('PDRMA_Form_03_Property_Loss_Report');
+});
+
+// Return Rendered Form04 Form with specific id
 router.post('/UpdateForm/:id', (req, res) => {
     let id = req.params.id;
     let sql = `SELECT * FROM form_03 WHERE Form03ID = ${id}`;
@@ -27,43 +32,38 @@ router.post('/UpdateForm/:id', (req, res) => {
     });
 });
 
-// Return Rendered Minor Injury Log Form with specific id
-//router.get('/:id', (req, res) => {
-
-//});
-
-// Return Rendered Table of Minor Injury Log Forms
+// Return Rendered Table of Form04 Forms
 router.get('/TableView', (req, res) => {
     let sql = 'SELECT * FROM form_03';
     con.query(sql, (err, results, fields) => {
-        res.render('ViewForms04', {
+        res.render('ViewForms03', {
             title: 'title',
             data: results
         });
     });
 });
 
-// Return Array of JSON objects of Minor Injury Log Forms
+// Return Array of JSON objects of Form04 Forms
 router.get('/JSONArray', (req, res) => {
 
 });
 
-// Submit new Minor Injury Log Form using auto-increment to set id
+// Submit new Form04 Form using auto-increment to set id
 router.post('/', (req, res) => {
 
 });
 
-// Submit new Minor Injury Log Form or overwrite existing Minor Injury Log Form by Specifying :id
+// Submit new Form04 Form or overwrite existing Form04 Form by Specifying :id
 router.post('/:id', (req, res) => {
 
 });
 
-// Update Minor Injury Log Form by specifying :id
+// Update Form04 Form by specifying :id
 router.put('/:id', (req, res) => {
 
 });
 
-// Delete Minor Injury Log Form by specifying :id
+// Delete Form04 Form by specifying :id
 router.delete('/:id', (req, res) => {
 
 });
